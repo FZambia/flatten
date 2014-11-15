@@ -1,0 +1,14 @@
+{{define "title"}}
+	Proxy for extracting comments
+{{end}}
+
+{{define "body"}}
+	<div class="content">
+		<h1>Last 10</h1>
+		{{ range . }}
+			<div class="entry">
+				<a href="{{ . }}">{{ . }}</a>
+			</div>
+		{{ end }}
+	</div>
+{{end}}

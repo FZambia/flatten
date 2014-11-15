@@ -1,0 +1,16 @@
+{{define "title"}}
+	{{ .Title }}
+{{end}}
+
+{{define "body"}}	
+	<div class="content article post">
+		{{ if .Error}}
+			<h1>{{ .Error }}</h1>
+		{{ else }}
+			{{ range .Entries }}
+				<h3 class="entry-header">{{ .Author }}{{ if .Score }} ({{ .Score }}){{ end }}</h3>
+				{{ .Body }}
+			{{ end }}
+		{{ end }}
+	</div>
+{{end}}
